@@ -1,4 +1,5 @@
 # AES
+# encryption and decryption using the AES method (Advanced Encryption System)
 def encrypt(message):
 	key = input("Enter User Defined Password: ")
 	cipher = []
