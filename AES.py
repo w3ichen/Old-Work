@@ -1,5 +1,7 @@
 # AES
 # encryption and decryption using the AES method (Advanced Encryption System)
+# note: need to install numpy: pip3 install numpy
+# AES
 def encrypt(message):
 	key = input("Enter User Defined Password: ")
 	cipher = []
@@ -31,7 +33,7 @@ def decrypt(message):
 			decrypted.append(d)
 		return ''.join(decrypted)
 	except:
-		print('ERROR')
+		print('ERROR: INCORRECT PASSWORD')
 	
 def get_message(message):
 	# only returns one of the blocks
@@ -204,3 +206,19 @@ def decrypt_1(message_block,key_block):
 
 	except ValueError:
 		raise
+
+# ------------------------------------------------------
+
+print("Advanced Encryption System\n")
+message = input("Enter Message to be Encrypted:  ")
+cipher = encrypt(message)
+print("\nEncrypting...")
+print("Encrypted Cipher:  ")
+print(cipher)
+
+next = input("\nDo You Wish to Decrypt [y/n]?")
+if next == ("y" or "Y"):
+	decrypted = decrypt(cipher)
+	print("\nDecrypting...")
+	print("Decrypted Message:  ")
+	print(decrypted)
